@@ -1,0 +1,33 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:#5d4048}
+body{min-height:100vh;overflow:hidden;background:radial-gradient(circle at 20% 15%,#fff9,transparent 25%),radial-gradient(circle at 85% 80%,#fff7,transparent 28%),linear-gradient(145deg,#ffd9df,#f5a8b7)}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.screen{position:absolute;inset:0;display:grid;place-items:center;padding:18px;opacity:0;pointer-events:none;transform:translateY(18px) scale(.98);transition:.55s ease}
+.screen.active{opacity:1;pointer-events:auto;transform:none}
+.card{width:min(92vw,520px);max-height:90vh;overflow:auto;text-align:center;padding:40px 25px;border:1px solid #fff9;border-radius:34px;background:#ffffffe5;backdrop-filter:blur(14px);box-shadow:0 25px 70px #6f2f4230}
+.envelope{font-size:70px;animation:bob 2.3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(3deg)}}
+.eyebrow{margin:0 0 12px;color:#df718b;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:700}
+h1,h2{margin:0;line-height:1.08}h1{font-family:Pacifico,cursive;font-size:clamp(42px,12vw,68px);font-weight:400}h2{font-size:clamp(32px,9vw,50px)}
+.intro,.body-text{max-width:420px;margin:18px auto 25px;color:#8e6972;line-height:1.7}
+.primary,.secondary{border:0;border-radius:999px;padding:14px 23px;min-width:155px;font-weight:700;transition:.2s}
+.primary{color:#fff;background:linear-gradient(135deg,#df718b,#ee8ea5);box-shadow:0 12px 28px #df718b4d}
+.secondary{color:#df718b;background:#fff9;border:1px solid #df718b40}
+.primary:hover,.secondary:hover{transform:translateY(-2px)}
+.heart-icon{font-size:76px;color:#df718b;animation:bob 2.2s ease-in-out infinite}.heart-icon.big{font-size:82px}
+.photo{width:min(100%,320px);aspect-ratio:4/5;margin:0 auto 24px;border-radius:25px;overflow:hidden;background:#fff9;display:grid;place-items:center;color:#8e6972;font-size:13px}
+.photo img{width:100%;height:100%;object-fit:cover}.choices{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.pulse{animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12)}}
+.signature{font-family:Pacifico,cursive;color:#8e6972}
+.music{position:fixed;right:18px;bottom:18px;z-index:20}.music button{width:44px;height:44px;border:1px solid #fff9;border-radius:50%;background:#ffff;color:#df718b;font-size:20px;box-shadow:0 8px 25px #6f2f4229}
+
+/* Tampilan hitam ala terminal di video */
+.terminal-screen{background:#090a0d;padding:22px}
+.terminal{width:min(92vw,720px);min-height:300px;padding:26px 22px;color:#f4f4f4;font-family:"Courier New",monospace;font-size:clamp(14px,3.7vw,20px);line-height:1.75;text-align:left;border-radius:12px;background:#090a0d;box-shadow:0 0 50px #000}
+.terminal::before{content:"●  ●  ●";display:block;color:#777;font-size:11px;letter-spacing:5px;margin-bottom:20px}
+.terminal-title{color:#f4a7b8;margin-bottom:16px}.cursor{display:inline-block;width:9px;height:1.05em;background:#f4f4f4;vertical-align:-2px;animation:blink .7s infinite}@keyframes blink{50%{opacity:0}}
+.terminal-button{display:none;margin-top:25px}
+#countText{white-space:pre-line}.count-big{font-size:clamp(38px,12vw,70px);font-weight:700}
+.heart{position:fixed;pointer-events:none;z-index:1;color:#fff;font-size:20px;animation:fall linear forwards;opacity:.75}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.confetti{position:fixed;z-index:30;width:9px;height:14px;top:-20px;animation:cf 2.8s linear forwards}@keyframes cf{to{transform:translate(var(--x),110vh) rotate(720deg);opacity:0}}
+@media(max-width:480px){.card{padding:34px 20px;border-radius:28px}.terminal{padding:22px 16px}}

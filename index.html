@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ada Pesan Untukmu 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hearts"></div>
+
+  <main>
+    <section class="screen active" id="opening">
+      <div class="card">
+        <div class="envelope">💌</div>
+        <p class="eyebrow">a little something for you</p>
+        <h1>Haiii,<br>kamuuuu...</h1>
+        <p class="intro">Akuu punya sesuatuuu<br>buat kamuu.</p>
+        <button class="primary" id="openBtn">‼️ Buka Pesan ‼️</button>
+      </div>
+    </section>
+
+    <section class="screen" id="message">
+      <div class="card">
+        <div class="heart-icon">♡</div>
+        <p class="eyebrow">just for you</p>
+        <h2>Aku cuma mau<br>bilang sesuatu.</h2>
+        <p class="body-text">
+          Mungkin aku nggak selalu pintar nyusun kata-kata,
+          jadi kali ini aku bikin kamu baca sendiri sampai selesai hehe.
+        </p>
+        <button class="primary" onclick="show('memory')">Lanjut →</button>
+      </div>
+    </section>
+
+    <section class="screen" id="memory">
+      <div class="card">
+        <div class="photo">
+          <img src="images/foto1.jpg" alt="Foto kenangan"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span>📷 Taruh foto1.jpg di folder images</span>
+        </div>
+        <p class="eyebrow">a little reminder</p>
+        <h2>Beberapa hal<br>memang layak diingat.</h2>
+        <p class="body-text">
+          Entah kenapa, dari sekian banyak hal yang terjadi,
+          selalu ada aja hal kecil tentang kamu yang berhasil aku ingat.
+        </p>
+        <button class="primary" onclick="show('question')">Masih ada satu lagi 👀</button>
+      </div>
+    </section>
+
+    <section class="screen" id="question">
+      <div class="card">
+        <div class="heart-icon big">💗</div>
+        <p class="eyebrow">okay, one question...</p>
+        <h2>Kamu mau<br>ketemu aku?</h2>
+        <p class="body-text">Jawab jujur yaa. Aku penasaran banget.</p>
+        <div class="choices">
+          <button class="primary" id="yesBtn">YESS 💗</button>
+          <button class="secondary" id="noBtn">nggak 😭</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANIMASI SETELAH YES: seperti video yang kamu kirim -->
+    <section class="screen terminal-screen" id="countdown">
+      <div class="terminal">
+        <div id="countText"></div>
+      </div>
+    </section>
+
+    <section class="screen terminal-screen" id="typing">
+      <div class="terminal">
+        <div class="terminal-title">a message for you ♡</div>
+        <div id="typingText"></div>
+        <button class="primary terminal-button" id="finishBtn">Lanjut 💗</button>
+      </div>
+    </section>
+
+    <section class="screen" id="final">
+      <div class="card">
+        <div class="heart-icon big pulse">💗</div>
+        <p class="eyebrow">I KNEW IT!</p>
+        <h1>See you soon ✨</h1>
+        <p class="body-text">
+          Oke berarti tinggal satu hal:
+          jangan lupa kapan kita jadi ketemu hehe.
+        </p>
+        <p class="signature">— dari seseorang yang pengen ketemu kamu ♡</p>
+        <button class="secondary" onclick="location.reload()">Ulangi dari awal</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="music">
+    <button id="musicBtn" aria-label="Musik">♫</button>
+    <audio id="audio" loop>
+      <source src="music/lagu.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
